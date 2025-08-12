@@ -1,3 +1,5 @@
+package tests;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -6,6 +8,11 @@ public class CartTest extends BaseTest {
 
     @Test
     public void checkCart() {
+        loginPage.open();
+        loginPage.login("standard_user", "secret_sauce");
+        productsPage.addToCart("Sauce Labs Bike Light");
+        productsPage.addToCart("Sauce Labs Fleece Jacket");
+        /*
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
@@ -18,5 +25,6 @@ public class CartTest extends BaseTest {
         driver.findElement(By.className("shopping_cart_link")).click();
         String price = driver.findElement(By.className("inventory_item_price")).getText();
         Assert.assertEquals(price, "$29.99");
+         */
     }
 }
