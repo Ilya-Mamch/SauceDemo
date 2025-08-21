@@ -4,7 +4,9 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class CheckoutTest extends BaseTest {
-    @Test
+    @Test(testName = "Проверка позитивного завершения покупки товара",
+            description = "Проверка позитивного завершения покупки товара",
+            priority = 1)
     public void checkPositiveCheckout() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -19,7 +21,9 @@ public class CheckoutTest extends BaseTest {
                 "Покупка не прошла");
     }
 
-    @Test
+    @Test(testName = "Проверка покупки товара с пустыми полями",
+            description = "Проверка покупки товара с пустыми полями",
+            priority = 4)
     public void checkEmptyFields() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -32,7 +36,9 @@ public class CheckoutTest extends BaseTest {
                 "Error: First Name is required");
     }
 
-    @Test
+    @Test(testName = "Проверка покупки товара с незаполненным именем",
+            description = "Проверка покупки товара с незаполненным именем",
+            priority = 5)
     public void checkEmptyFirstName() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -44,7 +50,7 @@ public class CheckoutTest extends BaseTest {
                 "Your Cart");
     }
 
-    @Test
+    @Test(testName = "Проверка общей цены", description = "Проверка общей цены", priority = 2)
     public void checkTotalPrice() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -57,7 +63,7 @@ public class CheckoutTest extends BaseTest {
                 "Total: $10.79");
     }
 
-    @Test
+    @Test(testName = "Проверка налога товара", description = "Проверка налога товара", priority = 3)
     public void getProductCard() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");

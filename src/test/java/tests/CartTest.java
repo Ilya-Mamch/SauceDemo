@@ -6,7 +6,8 @@ import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {
 
-    @Test
+    @Test(priority = 1, description = "Проверка добавления товара в корзину",
+            testName = "Проверка добавления товара в корзину")
     public void checkCart() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
