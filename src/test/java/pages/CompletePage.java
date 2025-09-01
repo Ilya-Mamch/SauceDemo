@@ -15,15 +15,19 @@ public class CompletePage extends BasePage {
     public void open() {
         driver.get(BASE_URL + "checkout-complete.html");
     }
+
     public String getCompleteTitle() {
         return driver.findElement(COMPLETE_TITLE).getText();
     }
+
     public String getCompleteHeader() {
         return driver.findElement(COMPLETE_HEADER).getText();
     }
+
     public String getCompleteText() {
         return driver.findElement(COMPLETE_TEXT).getText();
     }
+
     public void clickButton() {
         driver.findElement(COMPLETE_BUTTON).click();
     }

@@ -14,24 +14,31 @@ public class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
     }
+
     public void open() {
         driver.get(BASE_URL + "cart.html");
     }
+
     public String getCartTitle() {
         return driver.findElement(CART_TITLE).getText();
     }
+
     public String getCartName() {
         return driver.findElement(CART_ITEM_NAME).getText();
     }
+
     public String getCartPrice() {
         return driver.findElement(CART_ITEM_PRICES).getText();
     }
+
     public void clickRemove() {
         driver.findElement(CART_REMOVE_BUTTON).click();
     }
+
     public void clickCheckout() {
         driver.findElement(CART_CHECKOUT_BUTTON).click();
     }
+
     public void clickContinue() {
         driver.findElement(CART_CONTINUE_BUTTON).click();
     }
