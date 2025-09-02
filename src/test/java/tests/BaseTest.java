@@ -22,6 +22,8 @@ public class BaseTest {
     CheckoutPage checkoutPage;
     CompletePage completePage;
     OverviewPage overviewPage;
+    String user = System.getProperty("user");
+    String password = System.getProperty("password");
 
     @Parameters({"browser"})
     @BeforeMethod(description = "Настройка браузера", alwaysRun = true)

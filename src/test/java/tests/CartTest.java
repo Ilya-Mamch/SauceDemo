@@ -8,7 +8,7 @@ public class CartTest extends BaseTest {
             testName = "Проверка добавления товара в корзину")
     public void checkCart() {
         loginPage.open()
-                .login("standard_user", "secret_sauce")
+                .login(user, password)
                 .addToCart("Sauce Labs Bike Light")
                 .addToCart("Sauce Labs Fleece Jacket");
     }
