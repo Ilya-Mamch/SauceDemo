@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
@@ -21,18 +22,18 @@ public class LoginTest extends BaseTest {
     @TmsLink("SD-01")
     @Issue("SD_01/1")
     public void checkPositiveLogin() {
-        loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.open()
+                .login("standard_user", "secret_sauce");
         assertEquals(productsPage.getTitle(),
                 "Products",
                 "Логин не выполнен");
     }
 
-    @Test(enabled = false, testName = "Проверка авторизации без ввода пароля",
+    @Test(enabled = true, testName = "Проверка авторизации без ввода пароля",
             description = "Проверка авторизации без ввода пароля", priority = 2)
     public void checkLoginWithEmptyPassword() {
-        loginPage.open();
-        loginPage.login("standard_user", "");
+        loginPage.open()
+                .login("standard_user", "");
         assertEquals(loginPage.gerErrorMessage(),
                 "Epic sadface: Password is required",
                 "Сообщение об ошибке не соответствует");
@@ -41,8 +42,8 @@ public class LoginTest extends BaseTest {
     @Test(testName = "Проверка входа в магазин с пустым именем пользователя",
             description = "Проверка входа в магазин с пустым именем пользователя", priority = 2)
     public void checkLoginWithEmptyLogin() {
-        loginPage.open();
-        loginPage.login("", "secret_sauce");
+        loginPage.open()
+                .login("", "secret_sauce");
         assertEquals(loginPage.gerErrorMessage(),
                 "Epic sadface: Username is required",
                 "Сообщение об ошибке не соответсвует");
@@ -52,8 +53,8 @@ public class LoginTest extends BaseTest {
             description = "Проверка входа в магазин с пустыми полями",
             retryAnalyzer = Retry.class, priority = 2)
     public void checkLoginWithNegative() {
-        loginPage.open();
-        loginPage.login("123", "123");
+        loginPage.open()
+                .login("123", "123");
         assertEquals(loginPage.gerErrorMessage(),
                 "Epic sadface: Username and password do not match any user in this servic",
                 "Сообщение об ошибке не соответсвует");
@@ -71,8 +72,8 @@ public class LoginTest extends BaseTest {
     @Test(dataProvider = "Проверка логина с негативными данными",
             description = "Проверка логина с негативными данными", priority = 3)
     public void paramNegativeTest(String user, String password, String expectedErrorMessage) {
-        loginPage.open();
-        loginPage.login(user, password);
+        loginPage.open()
+                .login(user, password);
         assertEquals(loginPage.gerErrorMessage(),
                 expectedErrorMessage,
                 "Сообщение об ошибке не соответствует");

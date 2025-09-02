@@ -1,8 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class CheckoutPage extends BasePage {
     private final By CHECKOUT_TITLE = By.className("title");
     private final By CHECKOUT_FIRST_NAME = By.id("first-name");
@@ -15,41 +17,56 @@ public class CheckoutPage extends BasePage {
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
-    public void open() {
+
+    public CheckoutPage open() {
         driver.get(BASE_URL + "checkout-step-one.html");
+        log.info("Opening Checkout page");
+        return this;
     }
 
     public String getTitleCheckout() {
         return driver.findElement(CHECKOUT_TITLE).getText();
     }
 
-    public void setFirstName(String firstName) {
+    public CheckoutPage setFirstName(String firstName) {
         driver.findElement(CHECKOUT_FIRST_NAME).sendKeys(firstName);
+        log.info("Set first name");
+        return this;
     }
 
-    public void setLastName(String lastName) {
+    public CheckoutPage setLastName(String lastName) {
         driver.findElement(CHECKOUT_LAST_NAME).sendKeys(lastName);
+        log.info("Set last name");
+        return this;
     }
 
-    public void setZipCode(String zipCode) {
+    public CheckoutPage setZipCode(String zipCode) {
         driver.findElement(CHECKOUT_ZIP_CODE).sendKeys(zipCode);
+        log.info("Set ZipCod");
+        return this;
     }
 
-    public void clickCancel() {
+    public CartPage clickCancel() {
         driver.findElement(CHECKOUT_CANCEL_BUTTON).click();
+        log.info("Click cancel button");
+        return new CartPage(driver);
     }
 
-    public void clickContinue() {
+    public OverviewPage clickContinue() {
         driver.findElement(CHECKOUT_CONTINUE_BUTTON).click();
+        log.info("Click continue button");
+        return new OverviewPage(driver);
     }
 
-    public void fillAllInfo(String firstName, String lastName, String zipCode) {
+    public CheckoutPage fillAllInfo(String firstName, String lastName, String zipCode) {
+        log.info("Fill all info with cred {}, {}, {}", firstName, lastName, zipCode);
         setFirstName(firstName);
         setLastName(lastName);
         setZipCode(zipCode);
+        return this;
     }
 
-    public String getError(){
+    public String getError() {
         return driver.findElement(CHECKOUT_ERROR).getText();
     }
 }

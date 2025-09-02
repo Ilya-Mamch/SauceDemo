@@ -8,6 +8,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+
 import java.time.Duration;
 import java.util.HashMap;
 
@@ -22,7 +23,7 @@ public class BaseTest {
     OverviewPage overviewPage;
 
     @Parameters({"browser"})
-    @BeforeMethod (description = "Настройка браузера", alwaysRun = true)
+    @BeforeMethod(description = "Настройка браузера", alwaysRun = true)
     public void setup(@Optional("chrome") String browser, ITestContext context) {
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
@@ -55,8 +56,7 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()){
-            AllureUtils.takeScreenshot(driver);
+        if (ITestResult.FAILURE == result.getStatus()) {
         }
         driver.quit();
     }
