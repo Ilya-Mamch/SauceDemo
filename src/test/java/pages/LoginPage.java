@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @Log4j2
-@Slf4j
+//@Slf4j
 public class LoginPage extends BasePage {
     private final By USERNAME_INPUT = By.id("user-name");
     private final By PASSWORD_INPUT = By.id("password");
