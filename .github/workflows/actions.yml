@@ -25,6 +25,5 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run tests
-      run: mvn clean test -Duser=$USER - Dpassword=$PASSWORD
-#    - name: Run Smoke tests
-#      run: mvn clean -DsuiteXmlFile=SmokeTest.xml test
+      run: mvn clean test -Duser=$USER -Dpassword=$PASSWORD
+#
