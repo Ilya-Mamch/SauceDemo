@@ -18,7 +18,7 @@ public class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void clickJS(WebElement element){
+    public void clickJS(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("argument[0].click();", element);
     }
@@ -28,6 +28,8 @@ public class BasePage {
             public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver)
                         .executeScript("return document.readyState")
-                        .toString().equals("complete");        }
-        }; }
+                        .toString().equals("complete");
+            }
+        };
+    }
 }
