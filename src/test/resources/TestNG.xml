@@ -8,6 +8,7 @@
         <classes>
             <class name="tests.LocatorsTest"/>
             <class name="tests.CartTest"/>
+            <class name="tests.LoginTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>
