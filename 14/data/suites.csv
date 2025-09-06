@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2069","checkLocators","Smoke Test SauceDemo","Sat Sep 06 16:55:05 UTC 2025","passed","Sat Sep 06 16:55:07 UTC 2025","tests.LocatorsTest","chrome","tests.LocatorsTest","checkLocators"
+"","1063","Проверка добавления товара в корзину","Smoke Test SauceDemo","Sat Sep 06 16:55:18 UTC 2025","passed","Sat Sep 06 16:55:19 UTC 2025","tests.CartTest","firefox","tests.CartTest","checkCart"
