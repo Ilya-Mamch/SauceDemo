@@ -8,11 +8,9 @@
         <classes>
             <class name="tests.LocatorsTest"/>
             <class name="tests.LoginTest"/>
-<!--                <methods>-->
-<!--                    <include name="checkLoginWithNegativeCred"/>-->
-<!--                </methods>-->
         </classes>
     </test> <!-- Test -->
+
     <test name="Thread#2">
         <groups>
             <run>
