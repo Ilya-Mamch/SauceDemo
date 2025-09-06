@@ -7,11 +7,10 @@
     <test name="Thread#1">
         <classes>
             <class name="tests.LocatorsTest"/>
-            <class name="tests.LoginTest">
+            <class name="tests.LoginTest"/>
 <!--                <methods>-->
 <!--                    <include name="checkLoginWithNegativeCred"/>-->
 <!--                </methods>-->
-            </class>
         </classes>
     </test> <!-- Test -->
     <test name="Thread#2">
