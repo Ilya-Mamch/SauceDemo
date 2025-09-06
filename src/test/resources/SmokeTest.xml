@@ -8,9 +8,9 @@
         <classes>
             <class name="tests.LocatorsTest"/>
             <class name="tests.LoginTest">
-                <methods>
-                    <include name="checkLoginWithNegativeCred"/>
-                </methods>
+<!--                <methods>-->
+<!--                    <include name="checkLoginWithNegativeCred"/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test> <!-- Test -->
