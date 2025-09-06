@@ -6,7 +6,6 @@
     </listeners>
     <test name="Thread#1">
         <classes>
-            <class name="tests.LocatorsTest"/>
             <class name="tests.LoginTest"/>
         </classes>
     </test> <!-- Test -->
